@@ -120,6 +120,7 @@ public class UIManager : MonoBehaviour
 
         loadingScreenCanvasGroup.alpha = 0;
         LoadingScreen.SetActive(false);
+        loadingBar.fillAmount = 0;
 
         Debug.Log("Ending Fadeout");
     }
@@ -159,7 +160,6 @@ public class UIManager : MonoBehaviour
         yield return new WaitForEndOfFrame();
         Debug.Log("Ending Progress Bar");
         StartCoroutine(LoadingUIFadeOut());
-        loadingBar.fillAmount = 0;
     }
 
     private IEnumerator DelayedSwitchUIPanel(float time, GameObject uiPanel)

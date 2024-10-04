@@ -15,7 +15,7 @@ public class GameState_GamePlay : IGameState
         Cursor.visible = false;
         gameStateManager._uIManager.UIGamePlay();
         gameStateManager._playerManager.player.SetActive(true);
-        //gameStateManager._cameraManager.playerCamera.enabled = true;
+        gameStateManager._cameraManager.playerCamera.enabled = true;
         gameStateManager._cameraManager.isCameraMoveEnabled = true;
     }
 

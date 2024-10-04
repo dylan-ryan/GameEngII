@@ -16,7 +16,6 @@ public class LevelManager : MonoBehaviour
     public PlayerManager _playerManager;
     public UIManager _uIManager;
 
-
     public int nextScene;
     public List<AsyncOperation> scenesToLoad = new List<AsyncOperation>();
 
@@ -111,6 +110,3 @@ public class LevelManager : MonoBehaviour
     }
 
 }
-
-
-
