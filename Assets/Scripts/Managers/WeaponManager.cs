@@ -25,6 +25,15 @@ public class WeaponManager : MonoBehaviour
 
         Debug.DrawLine(playerCam.transform.position, playerCam.transform.position + playerCam.transform.forward * 10);
 
+        Renderer[] allRenderers = FindObjectsOfType<Renderer>();
+        foreach (Renderer renderer in allRenderers)
+        {
+            if (renderer.gameObject.layer == Mathf.Log(cubeFilter.value, 2))
+            {
+                renderer.material.color = Color.blue;
+            }
+        }
+
         RaycastHit[] hits = Physics.RaycastAll(playerCam.transform.position, playerCam.transform.forward, distance, cubeFilter.value);
         foreach(RaycastHit hit2 in hits)
         {
