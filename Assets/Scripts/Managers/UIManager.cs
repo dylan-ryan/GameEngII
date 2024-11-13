@@ -25,13 +25,18 @@ public class UIManager : MonoBehaviour
     [Header("Gameplay UI Elements")]
     // Gameplay Specific UI Elements
     public Text LevelCount;
+    public Text gameplayMessage;
+    public Text pickupCout;
 
     [Header("Loading Screen UI Elements")]
     public CanvasGroup loadingScreenCanvasGroup;
     public Image loadingBar;
     public TextMeshProUGUI loadingText;
     public float fadeTime = 0.5f;
-
+    /// <summary>
+    /// Used to updated the amount of total levels. 
+    /// </summary>
+    /// <param name="count"></param>
     public void UpdateLevelCount(int count)
     {
         if (LevelCount != null)
@@ -40,51 +45,66 @@ public class UIManager : MonoBehaviour
         if (LevelCount = null)
         { Debug.LogError("LevelCount is not assigned to UIManager in the inspector!"); }
     }
-
-
+    /// <summary>
+    /// Sets UI to Main menu.
+    /// </summary>
     public void UIMainMenu()
     {
         DisableAllUIPanels();
         mainMenuUI.SetActive(true);
     }
-
+    /// <summary>
+    /// Sets UI to gameplay HUD
+    /// </summary>
     public void UIGamePlay()
     {
         DisableAllUIPanels();
         gamePlayUI.SetActive(true);
     }
-
+    /// <summary>
+    /// Sets UI Game Over.
+    /// </summary>
     public void UIGameOver()
     {
         DisableAllUIPanels();
         gameOverUI.SetActive(true);
     }
-
+    /// <summary>
+    /// Sets UI to Paused
+    /// </summary>
     public void UIPaused()
     {
         DisableAllUIPanels();
         pauseMenuUI.SetActive(true);
     }
-
+    /// <summary>
+    /// Sets UI to options
+    /// </summary>
     public void UIOptions()
     {
         DisableAllUIPanels();
         optionsMenuUI.SetActive(true);
     }
-
-
+    /// <summary>
+    /// Sets UI to Credits
+    /// </summary>
     public void UICredits()
     {
         DisableAllUIPanels();
         creditsMenuUI.SetActive(true);
     }
-
+    /// <summary>
+    /// Starts UI loading screen process.
+    /// </summary>
+    /// <param name="targetPanel"></param>
     public void UILoadingScreen(GameObject targetPanel)
     {
         StartCoroutine(LoadingUIFadeIN());
         StartCoroutine(DelayedSwitchUIPanel(fadeTime, targetPanel));
     }
-
+    /// <summary>
+    /// Turns off all UI pannels. (Loading screem excluded)
+    /// </summary>
     public void DisableAllUIPanels()
     {
         mainMenuUI.SetActive(false);
@@ -94,7 +114,9 @@ public class UIManager : MonoBehaviour
         optionsMenuUI.SetActive(false);
         creditsMenuUI.SetActive(false);
     }
-
+    /// <summary>
+    /// Truns on all UI pannels. (Loading screem excluded)
+    /// </summary>
     public void EnableAllUIPanels()
     {
         mainMenuUI.SetActive(true);
@@ -104,7 +126,10 @@ public class UIManager : MonoBehaviour
         optionsMenuUI.SetActive(true);
         creditsMenuUI.SetActive(true);
     }
-
+    /// <summary>
+    /// Fades loading scnreen out.
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator LoadingUIFadeOut()
     {
         Debug.Log("Starting Fadeout");
@@ -121,10 +146,12 @@ public class UIManager : MonoBehaviour
         loadingScreenCanvasGroup.alpha = 0;
         LoadingScreen.SetActive(false);
         loadingBar.fillAmount = 0;
-
         Debug.Log("Ending Fadeout");
     }
-
+    /// <summary>
+    /// Fades Loading screen in.
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator LoadingUIFadeIN()
     {
         Debug.Log("Starting Fadein");
@@ -143,7 +170,10 @@ public class UIManager : MonoBehaviour
         Debug.Log("Ending Fadein");
         StartCoroutine(LoadingBarProgress());
     }
-
+    /// <summary>
+    /// Sets the loading bar progress to average progress of all loading. 
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator LoadingBarProgress()
     {
         Debug.Log("Starting Progress Bar");
@@ -161,11 +191,26 @@ public class UIManager : MonoBehaviour
         Debug.Log("Ending Progress Bar");
         StartCoroutine(LoadingUIFadeOut());
     }
-
+    /// <summary>
+    /// used for fade in fade out for loading screen UI. 
+    /// </summary>
+    /// <param name="time"></param>
+    /// <param name="uiPanel"></param>
+    /// <returns></returns>
     private IEnumerator DelayedSwitchUIPanel(float time, GameObject uiPanel)
     {
         yield return new WaitForSeconds(time);
         DisableAllUIPanels();
         uiPanel.SetActive(true);
+    }
+
+    public void UpdateGameplayMessage(string message)
+    {
+        gameplayMessage.text = message;
+    }
+
+    public void UpdatePickupUI(string message)
+    {
+        pickupCout.text = message;
     }
 }

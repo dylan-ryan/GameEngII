@@ -21,7 +21,7 @@ public class WeaponManager : MonoBehaviour
         {
             distance = hit.distance;
         }
-        Debug.Log($"Distance is {distance}");
+        //Debug.Log($"Distance is {distance}");
 
         Debug.DrawLine(playerCam.transform.position, playerCam.transform.position + playerCam.transform.forward * 10);
 
@@ -42,6 +42,6 @@ public class WeaponManager : MonoBehaviour
                 renderer.material.color = Color.red;
             }
         }
-        Debug.Log($"Hit {hits.Length} cubes");
+        //Debug.Log($"Hit {hits.Length} cubes");
     }
 }

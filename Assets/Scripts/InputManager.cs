@@ -28,6 +28,9 @@ public class InputManager : MonoBehaviour
     private InputAction look;
     private InputAction jump;
     private InputAction sprint;
+    private InputAction playerFire;
+    public InputActionAsset inputActionAsset;
+    public InteractionManager interactionManager;
 
     [Header("Camera Inputs")]
     public float scrollInput; // Scroll input for camera zoom
@@ -41,6 +44,7 @@ public class InputManager : MonoBehaviour
         HandleJumpInput();
         HandleCameraInput();
         HandlePauseKeyInput();
+        HandleInteractionInput();
     }
 
     private void Awake()
@@ -62,6 +66,9 @@ public class InputManager : MonoBehaviour
         sprint = playerControls.Player.Sprint;
         sprint.Enable();
 
+        playerFire = playerControls.Player.Fire;
+        playerFire.Enable();
+
     }
 
     private void OnDisable()
@@ -70,6 +77,15 @@ public class InputManager : MonoBehaviour
         look.Disable();
         jump.Disable();
         sprint.Disable();
+        playerFire.Disable();
+    }
+
+    private void HandleInteractionInput()
+    {
+        if (playerFire.IsPressed() && interactionManager.interactionPosible)
+        {
+            interactionManager.Interact();
+        }
     }
 
 
