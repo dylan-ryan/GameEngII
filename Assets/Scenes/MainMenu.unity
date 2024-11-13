@@ -794,6 +794,7 @@ MonoBehaviour:
   interactionPosible: 0
   target: {fileID: 0}
   pickupCout: 0
+  pickupStats: {fileID: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -2239,7 +2240,17 @@ PrefabInstance:
     - target: {fileID: 616959208050697347, guid: e778663d324e19a48ab9d91fcd9af8f9,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 720682736519436734, guid: e778663d324e19a48ab9d91fcd9af8f9,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 446.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 720682736519436734, guid: e778663d324e19a48ab9d91fcd9af8f9,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 58.6
       objectReference: {fileID: 0}
     - target: {fileID: 1450816010896785426, guid: e778663d324e19a48ab9d91fcd9af8f9,
         type: 3}
@@ -2588,6 +2599,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6430965463968047412, guid: e778663d324e19a48ab9d91fcd9af8f9,
+        type: 3}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6514533025378895997, guid: e778663d324e19a48ab9d91fcd9af8f9,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 284.1
       objectReference: {fileID: 0}
     - target: {fileID: 6574228092536363616, guid: e778663d324e19a48ab9d91fcd9af8f9,
         type: 3}

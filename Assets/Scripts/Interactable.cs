@@ -19,9 +19,14 @@ public class Interactable : MonoBehaviour
     public void Activate()
     {
         Debug.Log(this.name + " was actiavted");
-        if(type == InteractionType.Door)
+        if (pickupStats != null)
         {
-            interactionManager.pickupCout += pickupStats.count;
+            if (type == InteractionType.Pickup)
+            {
+                interactionManager.pickupCout = pickupStats.count;
+            }
+
         }
+        else Debug.Log("This one aint got a scriptable");
     }
 }

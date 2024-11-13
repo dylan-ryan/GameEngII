@@ -35,7 +35,7 @@ public class InteractionManager : MonoBehaviour
         {
             interactionPosible = false;
         }
-        uIManager.UpdatePickupUI(string.Format("Coins = {0}", pickupCout));
+       
     }
     void FixedUpdate()
     {
@@ -75,6 +75,8 @@ public class InteractionManager : MonoBehaviour
                 break;
             case Interactable.InteractionType.Pickup:
                 targetInteractable.Activate();
+                uIManager.UpdatePickupUI("                                                        ");
+                uIManager.UpdatePickupUI("Coins = " + pickupCout.ToString());
                 target.SetActive(false);
                 break;
             case Interactable.InteractionType.Button:
