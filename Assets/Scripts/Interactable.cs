@@ -23,7 +23,7 @@ public class Interactable : MonoBehaviour
         {
             if (type == InteractionType.Pickup)
             {
-                interactionManager.pickupCout = pickupStats.count;
+                interactionManager.pickupName = pickupStats.pickupName + " was collected";
             }
 
         }

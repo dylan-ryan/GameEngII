@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cbeec798d444164a859b775cbd28679, type: 3}
   m_Name: RedBox
   m_EditorClassIdentifier: 
-  count: 5
+  pickupName: Red Box

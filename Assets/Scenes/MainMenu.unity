@@ -793,7 +793,7 @@ MonoBehaviour:
   uIManager: {fileID: 252186077}
   interactionPosible: 0
   target: {fileID: 0}
-  pickupCout: 0
+  pickupName: 
   pickupStats: {fileID: 0}
 --- !u!1 &832575517
 GameObject:
@@ -2608,7 +2608,12 @@ PrefabInstance:
     - target: {fileID: 6514533025378895997, guid: e778663d324e19a48ab9d91fcd9af8f9,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 284.1
+      value: 651.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6514533025378895997, guid: e778663d324e19a48ab9d91fcd9af8f9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -690.6
       objectReference: {fileID: 0}
     - target: {fileID: 6574228092536363616, guid: e778663d324e19a48ab9d91fcd9af8f9,
         type: 3}

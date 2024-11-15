@@ -15,13 +15,12 @@ public class InteractionManager : MonoBehaviour
     [SerializeField]
     private GameObject target;
     private Interactable targetInteractable;
-    public int pickupCout;
+    public string pickupName;
     [SerializeField] private PickupStats pickupStats;
     // Start is called before the first frame update
     void Awake()
     {
         playerCam = cameraManager.playerCamera;
-        pickupCout = 0;
     }
 
     // Update is called once per frame
@@ -76,7 +75,7 @@ public class InteractionManager : MonoBehaviour
             case Interactable.InteractionType.Pickup:
                 targetInteractable.Activate();
                 uIManager.UpdatePickupUI("                                                        ");
-                uIManager.UpdatePickupUI("Coins = " + pickupCout.ToString());
+                uIManager.UpdatePickupUI(pickupName);
                 target.SetActive(false);
                 break;
             case Interactable.InteractionType.Button:
